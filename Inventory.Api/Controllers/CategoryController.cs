@@ -22,6 +22,4 @@ public class CategoryController(ICategoryService categoryService) : ControllerBa
         return Ok(category);
     }
     
-    
-    
 }
