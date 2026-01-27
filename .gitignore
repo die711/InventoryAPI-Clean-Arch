@@ -1,0 +1,57 @@
+# JetBrains Rider/IntelliJ IDE
+.idea/ 
+
+# Build artifacts
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+*.opendb
+*.pfx
+*.suo
+*.user
+*.userprefs
+*.vspscc
+*.vssscc
+*.waf
+*.wafold
+*.wapproj
+SqlPackage.exe
+SqlPackage.rc
+obj/
+UpgradeLog*.XML
+Generated_Code/
+
+# NuGet packages
+.nuget/
+*.nuget.props
+packages/
+*.nupkg
+[Tt]emp/
+[Rr]esharper[Cc]ache/
+
+# Temp, log and other files
+*.log
+*.stackdump
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# Profiler files
+*.sap
+*.sps
+*.vsp
+*.vspx
+
+# Azure files
+*.cscfg
+*.csdef
+*.publishsettings
+
+# DotNet tools
+.dotnet/
+.vs/
+
+# Uncomment if you do not use EditorConfig
+# .editorconfig
