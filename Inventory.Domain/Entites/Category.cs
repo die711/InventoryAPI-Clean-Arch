@@ -23,7 +23,7 @@ public class Category
             throw new ArgumentException("El nombre de la categoria no puede estar vacio", nameof(name));
 
         Name = name;
-        Description = Description;
+        Description = description;
 
 
     }

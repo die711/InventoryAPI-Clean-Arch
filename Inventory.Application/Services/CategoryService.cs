@@ -1,5 +1,6 @@
 using FluentValidation;
 using Inventory.Application.DTOs.Category;
+using Inventory.Application.Extensions;
 using Inventory.Application.Interfaces;
 using Inventory.Domain.Entites;
 using Inventory.Domain.Interfaces;
@@ -21,9 +22,10 @@ public class CategoryService(
         return mapper.Map<IEnumerable<CategoryResultDto>>(categories);
     }
 
-    public Task<CategoryResultDto> GetCategoryByIdAsync(int id)
+    public async Task<CategoryResultDto> GetCategoryByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        var category = await categoryRepository.GetByOrThrowAsync(id, "Category");
+        return mapper.Map<CategoryResultDto>(category);
     }
 
     public async Task<CategoryResultDto> CreateCategoryAsync(CreateCategoryDto dto)
@@ -37,13 +39,21 @@ public class CategoryService(
         return mapper.Map<CategoryResultDto>(category);
     }
 
-    public Task UpdateCategoryAsync(int id, UpdateCategoryDto dto)
+    public async Task UpdateCategoryAsync(int id, UpdateCategoryDto dto)
     {
-        throw new NotImplementedException();
+        await updateValidator.ValidateAndThrowAsync(dto);
+        var category = await categoryRepository.GetByOrThrowAsync(id, "Category");
+        
+        category.Update(dto.Name, dto.Description);
+        categoryRepository.Update(category);
+        await unitOfWork.SaveChangesAsync();
+
     }
 
-    public Task DeleteCategoryAsync(int id)
+    public async Task DeleteCategoryAsync(int id)
     {
-        throw new NotImplementedException();
+        var category = await categoryRepository.GetByOrThrowAsync(id, "Category");
+        categoryRepository.Remove(category);
+        await unitOfWork.SaveChangesAsync();
     }
 }

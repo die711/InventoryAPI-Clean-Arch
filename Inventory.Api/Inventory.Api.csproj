@@ -9,12 +9,11 @@
     <ItemGroup>
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
         <PackageReference Include="Mapster.DependencyInjection" Version="10.0.0-pre01" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.1" />
     </ItemGroup>
 
     <ItemGroup>
