@@ -8,6 +8,7 @@ public class InventoryDbContext(DbContextOptions<InventoryDbContext> options) : 
 {
     
     public DbSet<Category> Categories { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

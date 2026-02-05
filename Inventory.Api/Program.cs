@@ -24,9 +24,12 @@ TypeAdapterConfig.GlobalSettings.Scan(typeof(CategoryResultDto).Assembly);
 
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 
 builder.Services.AddControllers();
