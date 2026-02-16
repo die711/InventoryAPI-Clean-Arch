@@ -9,12 +9,10 @@ public class UnitOfWork(InventoryDbContext context): IUnitOfWork
         return await context.SaveChangesAsync(cancellationToken);
     } 
     
-    
     public void Dispose()
     {
         context.Dispose();
         GC.SuppressFinalize(this);
     }
-
     
 }

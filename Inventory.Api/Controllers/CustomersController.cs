@@ -31,6 +31,20 @@ public class CustomersController(ICustomerService customerService): ControllerBa
         var newCustomer = await customerService.CreateCustomerAsync(dto);
         return CreatedAtAction(nameof(GetById), new { id = newCustomer.Id }, newCustomer);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, UpdateCustomerDto dto)
+    {
+        await customerService.UpdateCustomerAsync(id, dto);
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> HttpDeleteAttribute(int id)
+    {
+        await customerService.DeleteCustomerAsync(id);
+        return NoContent();
+    }
     
     
     
