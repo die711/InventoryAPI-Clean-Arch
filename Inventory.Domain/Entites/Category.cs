@@ -5,6 +5,9 @@ public class Category
     public int Id { get; private set; }
     public string Name { get; private set; }
     public string? Description { get; set; }
+
+    public virtual ICollection<Product> Products { get; private set; } = new List<Product>();
+    
     
     private Category(){}
 

@@ -6,7 +6,7 @@ namespace Inventory.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SupplierController(ISupplierService supplierService): ControllerBase
+public class SuppliersController(ISupplierService supplierService): ControllerBase
 {
     
     [HttpGet]
